@@ -1,110 +1,169 @@
-# N-DATA
-A website for data analysis and interactive reports
+N-DATA.github.io/
+├── _config.yml             # Configuration for Jekyll
+├── index.html              # Home page
+├── about.html              # About page
+├── services.html           # Services page
+├── blog.html               # Blog page
+├── contact.html            # Contact page
+├── _layouts/               # Jekyll layouts
+│   ├── default.html        # Base layout
+│   ├── post.html           # Blog post layout
+├── _includes/              # Reusable HTML components
+│   ├── header.html         # Header component
+│   ├── footer.html         # Footer component
+├── _posts/                 # Blog posts
+│   ├── 2024-12-04-sample-post.md  # Sample blog post
+├── assets/                 # Static files
+│   ├── css/                # CSS files
+│   │   ├── style.css       # Main stylesheet
+│   ├── js/                 # JavaScript files
+│   │   ├── main.js         # Interactive scripts
+│   ├── images/             # Images
+│       ├── logo.png        # Company logo
+---
+layout: default
+title: Home
+---
 
+<section id="hero" class="hero">
+  <div class="container">
+    <h1>Welcome to <span style="color: #1E90FF;">N-DATA</span></h1>
+    <p>Your trusted partner in Business Intelligence and Data Visualization</p>
+    <a href="/services.html" class="btn">Explore Our Services</a>
+  </div>
+</section>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N-DATA - Data Analysis</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="navbar">
-            <a href="#">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </header>
+<section id="about" class="about">
+  <div class="container">
+    <h2>About Us</h2>
+    <p>We specialize in turning raw data into actionable insights, leveraging advanced tools and techniques to empower businesses.</p>
+    <a href="/about.html" class="btn">Learn More</a>
+  </div>
+</section>
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #000;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+}
 
-    <section id="home">
-        <h1>Welcome to N-DATA</h1>
-        <p>We specialize in data analysis and deliver actionable insights.</p>
-    </section>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service">
-            <h3>Big Data Analysis</h3>
-            <p>We help businesses handle and analyze large datasets efficiently.</p>
-        </div>
-        <div class="service">
-            <h3>Interactive Reports</h3>
-            <p>We provide interactive dashboards with tools like Power BI.</p>
-        </div>
-    </section>
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #001f3f, #1E90FF);
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
 
-    <section id="about">
-        <h2>About N-DATA</h2>
-        <p>We are a team of data experts offering innovative solutions to businesses worldwide.</p>
-    </section>
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
+.hero p {
+  font-size: 1.5rem;
+}
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message"></textarea>
+.btn {
+  background-color: #1E90FF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
 
-            <button type="submit">Send</button>
-        </form>
-    </section>
+.btn:hover {
+  background-color: #00BFFF;
+}
+---
+layout: default
+title: Contact
+---
 
-    <footer>
-        <p>&copy; 2024 N-DATA. All rights reserved.</p>
-    </footer>
+<section class="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <form id="contact-form" action="https://formspree.io/f/{your-endpoint}" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
 
-    <script src="script.js"></script>
-</body>
-</html>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
 
-document.querySelector("form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("Your message has been sent!");
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
 });
 
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+// Contact form submission alert
+document.querySelector('#contact-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert('Thank you for your message! We will get back to you soon.');
+});
+---
+layout: post
+title: "Welcome to the N-DATA Blog"
+date: 2024-12-04
+tags: [Business Intelligence, Data Visualization]
+---
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
+Welcome to our blog! This is where we share insights, tips, and the latest trends in Business Intelligence and Data Analytics. Stay tuned for more!
+---
+layout: default
+title: Blog
+---
 
-.navbar a {
-    margin: 0 15px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
+<section class="blog">
+  <div class="container">
+    <h2>Blog</h2>
+    <ul>
+      {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <p>{{ post.date | date: "%B %d, %Y" }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+<input type="text" id="search-bar" placeholder="Search posts...">
+<ul id="search-results"></ul>
+const searchBar = document.querySelector('#search-bar');
+const resultsList = document.querySelector('#search-results');
 
-h1, h2 {
-    text-align: center;
-    margin-top: 20px;
-}
-
-section {
-    padding: 20px;
-    margin: 20px 0;
-}
-
-footer {
-    text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 10px;
-}
+searchBar.addEventListener('input', (event) => {
+  const query = event.target.value.toLowerCase();
+  const results = site.posts.filter(post => 
+    post.title.toLowerCase().includes(query) ||
+    post.content.toLowerCase().includes(query)
+  );
+  
+  resultsList.innerHTML = results.map(post => `
+    <li><a href="${post.url}">${post.title}</a></li>
+  `).join('');
+});
+git add .
+git commit -m "Add detailed site structure and code"
+git push origin main
