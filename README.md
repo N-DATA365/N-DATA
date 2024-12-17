@@ -1,26 +1,4 @@
-N-DATA.github.io/
-├── _config.yml             # Configuration for Jekyll
-├── index.html              # Home page
-├── about.html              # About page
-├── services.html           # Services page
-├── blog.html               # Blog page
-├── contact.html            # Contact page
-├── _layouts/               # Jekyll layouts
-│   ├── default.html        # Base layout
-│   ├── post.html           # Blog post layout
-├── _includes/              # Reusable HTML components
-│   ├── header.html         # Header component
-│   ├── footer.html         # Footer component
-├── _posts/                 # Blog posts
-│   ├── 2024-12-04-sample-post.md  # Sample blog post
-├── assets/                 # Static files
-│   ├── css/                # CSS files
-│   │   ├── style.css       # Main stylesheet
-│   ├── js/                 # JavaScript files
-│   │   ├── main.js         # Interactive scripts
-│   ├── images/             # Images
-│       ├── logo.png        # Company logo
----
+
 layout: default
 title: Home
 ---
